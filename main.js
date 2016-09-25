@@ -10,7 +10,7 @@ app.on('ready', () => {
         backgroundColor: '#2e2c29',
         resizable: false
     });
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/main.html`);
 });
 
 exports.openWindow = (page) => {

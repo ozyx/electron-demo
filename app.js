@@ -1,7 +1,7 @@
 /* jslint es6 */
 const remote = require('electron').remote;
 const {Menu, MenuItem} = remote;
-const main = remote.require('./index.js')
+const main = remote.require('./main.js')
 
 const menu = new Menu();
 menu.append(new MenuItem({label: 'MenuItem1', click() { alert('item 1 clicked') }}));
