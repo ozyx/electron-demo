@@ -11,6 +11,10 @@ app.on('ready', () => {
         resizable: false
     });
     mainWindow.loadURL(`file://${__dirname}/main.html`);
+
+    electron.powerMonitor.on('on-ac', ()=>{
+        console.log('power plugged in')
+    })
 });
 
 exports.openWindow = (page) => {

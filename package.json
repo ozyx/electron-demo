@@ -4,6 +4,7 @@
   "description": "playing with electron",
   "main": "index.js",
   "devDependencies": {
+    "dice3d": "^1.0.2",
     "electron-prebuilt": "^1.4.1"
   },
   "scripts": {

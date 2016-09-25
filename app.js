@@ -20,3 +20,13 @@ button.addEventListener('click', () => {
 }, false)
 document.body.appendChild(button)
 
+button = document.createElement('button')
+button.textContent = 'roll some dice?'
+button.addEventListener('click', () => {
+    let dice3d = require('dice3d')
+    let result = Math.floor(Math.random() * 7)
+    dice3d(6, result, () => {
+        console.log('hey')
+    })
+}, false)
+document.body.appendChild(button)
