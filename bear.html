@@ -2,13 +2,29 @@
 <html lang="en">
 
 <head>
+    <style type="text/css">
+        img {
+            animation: 2s rotateRight infinite linear;
+        }
+        
+        @keyframes rotateRight {
+            0% {
+                transform: rotate(0deg);
+                transform-origin: 50% 50%;
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Bear</title>
+
 </head>
 
 <body>
     bear
-    <img src = "./res/bear.jpg">
+    <img src="./res/bear.jpg">
 </body>
 
 </html>
