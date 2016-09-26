@@ -1,16 +1,16 @@
 /* jslint es6 */
-'use strict'
-const electron = require('electron')
-const {app, BrowserWindow, Tray, Menu} = electron
+'use strict';
+const electron = require('electron');
+const {app, BrowserWindow, Tray, Menu} = electron;
 let tray = null;
-app.on('ready', () => {
+app.on('ready', function () {
     tray = new Tray('res/bear.ico');
     const contextMenu = Menu.buildFromTemplate([
-        { label: 'Item1', type: 'radio' },
-        { label: 'Item2', type: 'radio' },
-        { label: 'Item3', type: 'radio', checked: true },
-        { label: 'Item4', type: 'radio' }
-    ])
+        {label: 'Item1', type: 'radio'},
+        {label: 'Item2', type: 'radio'},
+        {label: 'Item3', type: 'radio', checked: true},
+        {label: 'Item4', type: 'radio'}
+    ]);
     tray.setToolTip('Bears & Dice')
     tray.setContextMenu(contextMenu)
 
@@ -29,12 +29,12 @@ app.on('ready', () => {
     })
 });
 
-exports.openWindow = (page) => {
+exports.openWindow = function (page) {
     let win = new BrowserWindow({
         width: 600,
         height: 600,
         backgroundColor: '#2e2c29',
         resizable: false
-    })
+    });
     win.loadURL(`file://${__dirname}/${page}`)
 }
