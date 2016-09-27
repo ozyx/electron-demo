@@ -2,18 +2,22 @@
 'use strict';
 const electron = require('electron');
 const {app, BrowserWindow, Tray, Menu} = electron;
-let tray = null;
-app.on('ready', function () {
-    tray = new Tray('res/bear.ico');
-    const contextMenu = Menu.buildFromTemplate([
-        {label: 'Item1', type: 'radio'},
-        {label: 'Item2', type: 'radio'},
-        {label: 'Item3', type: 'radio', checked: true},
-        {label: 'Item4', type: 'radio'}
-    ]);
-    tray.setToolTip('Bears & Dice')
-    tray.setContextMenu(contextMenu)
 
+app.on('ready', function () {
+    // enable tray icon if on windows
+    if(process.platform === "win32"){
+        let tray = new Tray('./res/bear.ico');
+        const contextMenu = Menu.buildFromTemplate([
+            {label: 'Item1', type: 'radio'},
+            {label: 'Item2', type: 'radio'},
+            {label: 'Item3', type: 'radio', checked: true},
+            {label: 'Item4', type: 'radio'}
+        ]);
+        tray.setToolTip('Bears & Dice')
+        tray.setContextMenu(contextMenu)
+    }
+
+    // Create main window
     let mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
